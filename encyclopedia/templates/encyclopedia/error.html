@@ -1,0 +1,21 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    Encyclopedia
+{% endblock %}
+
+{% block body %}
+    <h1>Error</h1>
+    {% if page == 'create-page' %}
+
+    <p>The {{title }} page already exists. Please create a page with another title.</p>
+    <a href="{% url 'create-page' %}">Back to create page.</a>
+    
+    {% else %}
+
+    <p>The {{title}} page does not exists. Would you like to go back to home page?</p>
+
+    <a href="{% url 'index' %}">Back to home page</a>
+    {% endif %}
+
+{% endblock %}
